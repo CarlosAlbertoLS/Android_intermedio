@@ -78,7 +78,7 @@ class HoroscopeFragment : Fragment() {
     }
 
     private fun initUIState() {
-        lifecycleScope.launch(Dispatchers.IO) {
+        lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 horoscopeViewModel.horoscope.collect() {
                     adapterHoroscope.updateList(it)
