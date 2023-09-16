@@ -27,7 +27,6 @@ import javax.inject.Inject
 class LukyFragment : Fragment() {
     private var _binding: FragmentLukyBinding? = null
     private val binding get() = _binding!!
-    private val luckViewModel: LuckViewModel by viewModels()
     @Inject
     lateinit var randomCardProvider: RandomCardProvider
     override fun onCreateView(
