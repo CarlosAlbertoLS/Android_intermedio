@@ -21,6 +21,9 @@ android {
     }
 
     buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
         getByName("release") {
             minifyEnabled false
             _isDebuggable false
@@ -31,7 +34,7 @@ android {
         getByName("debug") {
             _isDebuggable true
             resValue("string", "appName", "Horoscope Debug")
-            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {

@@ -1,11 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
     tools:context=".ui.luky.LukyFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/ivRoulette"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:layout_marginBottom="-240dp"
+            android:src="@drawable/ruleta"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/ivReverse"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/card_back_small"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/prediction"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivLuckyCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:background="@color/red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent="0.6"/>
+
+        <TextView
+            android:id="@+id/tvLucky"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            style="@style/content"
+            android:layout_margin="32dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvShared"
+            app:layout_constraintTop_toBottomOf="@id/ivLuckyCard"/>
+
+        <TextView
+            android:id="@+id/tvShared"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/shared"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            style="@style/content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLucky"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
